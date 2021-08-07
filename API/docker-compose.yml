@@ -1,0 +1,19 @@
+version: '3.6'
+
+volumes:
+  volume_db:
+
+services:
+
+  drug_db:
+    hostname: "drug_db"
+    container_name: "drug_db"
+    image: "postgres:latest"
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: BurnThemAllDaenerys84
+    volumes:
+      - volume_db:/var/lib/postgresql/data
+    restart: always
